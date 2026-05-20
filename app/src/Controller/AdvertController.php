@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert controller.
  */
@@ -185,9 +186,10 @@ class AdvertController extends AbstractController
      * Delete action.
      *
      * @param Request $request HTTP request
-     * @param Advert $advert Advert entity
+     * @param Advert  $advert  Advert entity
      *
      * @return Response HTTP response
+     *
      * @throws OptimisticLockException
      */
     #[Route('/{id}/delete', name: 'advert_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]

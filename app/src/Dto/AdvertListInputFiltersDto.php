@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert list input filters DTO.
  */

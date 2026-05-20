@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User voter.
  */
@@ -29,14 +30,14 @@ class UserVoter extends Voter
     /**
      * Edit permission.
      *
-     * @const string
+     * @var string
      */
     private const EDIT = 'EDIT';
 
     /**
      * Delete permission.
      *
-     * @const string
+     * @var string
      */
     private const DELETE = 'DELETE';
 
@@ -61,6 +62,7 @@ class UserVoter extends Voter
      * @param string         $attribute Permission name
      * @param mixed          $subject   Object
      * @param TokenInterface $token     Security token
+     * @param Vote|null      $vote      Security token
      *
      * @return bool Vote result
      */

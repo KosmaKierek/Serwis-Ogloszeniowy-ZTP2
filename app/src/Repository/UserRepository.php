@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User Repository.
  */
@@ -9,8 +10,6 @@ use App\Entity\Advert;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Exception\ORMException;
-use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -46,14 +45,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
      * Save user.
      *
      * @param User $user User
-     *
      */
     public function save(User $user): void
     {
         assert($this->getEntityManager() instanceof EntityManager);
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
-
     }
 
     /**

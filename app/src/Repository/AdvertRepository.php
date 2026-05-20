@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert repository.
  */
@@ -14,7 +15,6 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
-use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -39,7 +39,7 @@ class AdvertRepository extends ServiceEntityRepository
      * of specifying them in configuration files.
      * See https://symfony.com/doc/current/best_practices.html#configuration
      *
-     * @constant int
+     * @varant int
      */
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
 
@@ -80,9 +80,11 @@ class AdvertRepository extends ServiceEntityRepository
             ->select(
                 'partial advert.{id, createdAt, updatedAt, title}',
                 'partial category.{id, title}',
-                'partial tags.{id, title}'
+                'partial tags.{id, title}',
+                'partial author.{id, email}'
             )
             ->join('advert.category', 'category')
+            ->join('advert.author', 'author')
             ->leftJoin('advert.tags', 'tags')
             ->orderBy('advert.updatedAt', 'DESC');
 
@@ -93,7 +95,6 @@ class AdvertRepository extends ServiceEntityRepository
      * Save entity.
      *
      * @param Advert $advert Advert entity
-     *
      */
     public function save(Advert $advert): void
     {

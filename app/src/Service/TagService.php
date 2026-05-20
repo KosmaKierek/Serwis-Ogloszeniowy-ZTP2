@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Tag service.
  */
@@ -7,9 +8,7 @@ namespace App\Service;
 
 use App\Repository\TagRepository;
 use App\Entity\Tag;
-use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\OptimisticLockException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -25,7 +24,7 @@ class TagService implements TagServiceInterface
      * of specifying them in app/config/config.yml.
      * See https://symfony.com/doc/current/best_practices.html#configuration
      *
-     * @constant int
+     * @varant int
      */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 
@@ -69,7 +68,6 @@ class TagService implements TagServiceInterface
      * Delete entity.
      *
      * @param Tag $tag Tag entity
-     *
      */
     public function delete(Tag $tag): void
     {

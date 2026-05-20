@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert fixtures.
  */
@@ -10,8 +11,6 @@ use App\Entity\Advert;
 use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use App\Entity\Tag;
-use Doctrine\Persistence\ObjectManager;
-use Faker\Generator;
 
 /**
  * Class AdvertFixtures.

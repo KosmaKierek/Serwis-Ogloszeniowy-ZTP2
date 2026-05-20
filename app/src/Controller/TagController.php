@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Tag controller.
  */
@@ -193,14 +194,14 @@ class TagController extends AbstractController
 
             return $this->redirectToRoute('advert_index');
         }
-//        if (!$this->tagService->canBeDeleted($tag)) {
-//            $this->addFlash(
-//                'warning',
-//                $this->translator->trans('message.adverts_contain_tag')
-//            );
-//
-//            return $this->redirectToRoute('tag_index');
-//        }
+        //        if (!$this->tagService->canBeDeleted($tag)) {
+        //            $this->addFlash(
+        //                'warning',
+        //                $this->translator->trans('message.adverts_contain_tag')
+        //            );
+        //
+        //            return $this->redirectToRoute('tag_index');
+        //        }
         $form = $this->createForm(
             FormType::class,
             $tag,
