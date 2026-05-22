@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/wwwroot/app/src/Form/Type</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../_css/bootstrap.min.css?v=14.1.1" rel="stylesheet" type="text/css">
+  <link href="../../_css/style.css?v=14.1.1" rel="stylesheet" type="text/css">
+  <link href="../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../index.html">/home/wwwroot/app/src</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Form</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Type</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Classes</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="284.0" x2="780" y2="284.0" class="chart-grid"/>
+ <text x="52" y="284.0" text-anchor="end" dominant-baseline="middle" class="chart-label">1</text>
+ <line x1="60" y1="218.0" x2="780" y2="218.0" class="chart-grid"/>
+ <text x="52" y="218.0" text-anchor="end" dominant-baseline="middle" class="chart-label">2</text>
+ <line x1="60" y1="152.0" x2="780" y2="152.0" class="chart-grid"/>
+ <text x="52" y="152.0" text-anchor="end" dominant-baseline="middle" class="chart-label">3</text>
+ <line x1="60" y1="86.0" x2="780" y2="86.0" class="chart-grid"/>
+ <text x="52" y="86.0" text-anchor="end" dominant-baseline="middle" class="chart-label">4</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">5</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="AdvertType.php.html#21"><circle cx="60.0" cy="86.0" r="20.0" class="bubble-danger"><title>App\Form\Type\AdvertType — Coverage: 0.0% | Lines: 43 | Complexity: 4</title></circle></a>
+ <a href="PasswordChangeType.php.html#20"><circle cx="60.0" cy="86.0" r="17.0" class="bubble-danger"><title>App\Form\Type\PasswordChangeType — Coverage: 0.0% | Lines: 31 | Complexity: 4</title></circle></a>
+ <a href="UserType.php.html#21"><circle cx="60.0" cy="86.0" r="16.7" class="bubble-danger"><title>App\Form\Type\UserType — Coverage: 0.0% | Lines: 30 | Complexity: 4</title></circle></a>
+ <a href="RegistrationType.php.html#21"><circle cx="60.0" cy="86.0" r="16.4" class="bubble-danger"><title>App\Form\Type\RegistrationType — Coverage: 0.0% | Lines: 29 | Complexity: 4</title></circle></a>
+ <a href="TagType.php.html#20"><circle cx="60.0" cy="86.0" r="11.8" class="bubble-danger"><title>App\Form\Type\TagType — Coverage: 0.0% | Lines: 15 | Complexity: 4</title></circle></a>
+ <a href="CategoryType.php.html#19"><circle cx="60.0" cy="86.0" r="10.6" class="bubble-danger"><title>App\Form\Type\CategoryType — Coverage: 0.0% | Lines: 12 | Complexity: 4</title></circle></a>
+ <a href="EmailChangeType.php.html#18"><circle cx="60.0" cy="152.0" r="9.6" class="bubble-danger"><title>App\Form\Type\EmailChangeType — Coverage: 0.0% | Lines: 10 | Complexity: 3</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Class</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="AdvertType.php.html#21">App\Form\Type\AdvertType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="CategoryType.php.html#19">App\Form\Type\CategoryType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="PasswordChangeType.php.html#20">App\Form\Type\PasswordChangeType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="RegistrationType.php.html#21">App\Form\Type\RegistrationType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="TagType.php.html#20">App\Form\Type\TagType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="UserType.php.html#21">App\Form\Type\UserType</a></td><td class="text-right">20</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="EmailChangeType.php.html#18">App\Form\Type\EmailChangeType</a></td><td class="text-right">12</td><td class="text-right">0.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <div class="row dashboard-row">
+    <div class="col-md-6">
+     <h3>Methods</h3>
+     <p class="text-muted small">Bubble size = executable lines. Hover for details, click to navigate.</p>
+     <div class="file-coverage-chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+ <style>
+  .bubble-success { fill: var(--phpunit-success-bar); opacity: 0.7; }
+  .bubble-warning { fill: var(--phpunit-warning-bar); opacity: 0.7; }
+  .bubble-danger { fill: var(--phpunit-danger-bar); opacity: 0.7; }
+  .bubble-success:hover, .bubble-warning:hover, .bubble-danger:hover { opacity: 1; stroke: var(--bs-emphasis-color); stroke-width: 1.5; }
+  .chart-grid { stroke: var(--bs-border-color); stroke-width: 0.5; stroke-dasharray: 4,4; opacity: 0.5; }
+  .chart-axis { stroke: var(--bs-border-color); stroke-width: 1; }
+  .chart-label { fill: var(--bs-body-color); font-size: 11px; font-family: var(--bs-font-sans-serif, sans-serif); }
+  .chart-title { fill: var(--bs-body-color); font-size: 12px; font-family: var(--bs-font-sans-serif, sans-serif); }
+ </style>
+ <line x1="60.0" y1="20" x2="60.0" y2="350" class="chart-grid"/>
+ <text x="60.0" y="368" text-anchor="middle" class="chart-label">0%</text>
+ <line x1="204.0" y1="20" x2="204.0" y2="350" class="chart-grid"/>
+ <text x="204.0" y="368" text-anchor="middle" class="chart-label">20%</text>
+ <line x1="348.0" y1="20" x2="348.0" y2="350" class="chart-grid"/>
+ <text x="348.0" y="368" text-anchor="middle" class="chart-label">40%</text>
+ <line x1="492.0" y1="20" x2="492.0" y2="350" class="chart-grid"/>
+ <text x="492.0" y="368" text-anchor="middle" class="chart-label">60%</text>
+ <line x1="636.0" y1="20" x2="636.0" y2="350" class="chart-grid"/>
+ <text x="636.0" y="368" text-anchor="middle" class="chart-label">80%</text>
+ <line x1="780.0" y1="20" x2="780.0" y2="350" class="chart-grid"/>
+ <text x="780.0" y="368" text-anchor="middle" class="chart-label">100%</text>
+ <line x1="60" y1="350.0" x2="780" y2="350.0" class="chart-grid"/>
+ <text x="52" y="350.0" text-anchor="end" dominant-baseline="middle" class="chart-label">0</text>
+ <line x1="60" y1="185.0" x2="780" y2="185.0" class="chart-grid"/>
+ <text x="52" y="185.0" text-anchor="end" dominant-baseline="middle" class="chart-label">1</text>
+ <line x1="60" y1="20.0" x2="780" y2="20.0" class="chart-grid"/>
+ <text x="52" y="20.0" text-anchor="end" dominant-baseline="middle" class="chart-label">2</text>
+ <line x1="60" y1="20" x2="60" y2="350" class="chart-axis"/>
+ <line x1="60" y1="350" x2="780" y2="350" class="chart-axis"/>
+ <text x="420.0" y="395" text-anchor="middle" class="chart-title">Line Coverage (%)</text>
+ <text x="15" y="185.0" text-anchor="middle" transform="rotate(-90, 15, 185.0)" class="chart-title">Cyclomatic Complexity</text>
+ <a href="AdvertType.php.html#43"><circle cx="60.0" cy="185.0" r="20.0" class="bubble-danger"><title>App\Form\Type\AdvertType::buildForm — Coverage: 0.0% | Lines: 40 | Complexity: 1</title></circle></a>
+ <a href="PasswordChangeType.php.html#42"><circle cx="60.0" cy="185.0" r="16.7" class="bubble-danger"><title>App\Form\Type\PasswordChangeType::buildForm — Coverage: 0.0% | Lines: 28 | Complexity: 1</title></circle></a>
+ <a href="UserType.php.html#41"><circle cx="60.0" cy="185.0" r="16.4" class="bubble-danger"><title>App\Form\Type\UserType::buildForm — Coverage: 0.0% | Lines: 27 | Complexity: 1</title></circle></a>
+ <a href="RegistrationType.php.html#43"><circle cx="60.0" cy="185.0" r="16.1" class="bubble-danger"><title>App\Form\Type\RegistrationType::buildForm — Coverage: 0.0% | Lines: 26 | Complexity: 1</title></circle></a>
+ <a href="TagType.php.html#41"><circle cx="60.0" cy="185.0" r="11.0" class="bubble-danger"><title>App\Form\Type\TagType::buildForm — Coverage: 0.0% | Lines: 12 | Complexity: 1</title></circle></a>
+ <a href="CategoryType.php.html#41"><circle cx="60.0" cy="185.0" r="9.5" class="bubble-danger"><title>App\Form\Type\CategoryType::buildForm — Coverage: 0.0% | Lines: 9 | Complexity: 1</title></circle></a>
+ <a href="EmailChangeType.php.html#31"><circle cx="60.0" cy="185.0" r="8.9" class="bubble-danger"><title>App\Form\Type\EmailChangeType::buildForm — Coverage: 0.0% | Lines: 8 | Complexity: 1</title></circle></a>
+ <a href="AdvertType.php.html#28"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\AdvertType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="AdvertType.php.html#96"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\AdvertType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="AdvertType.php.html#109"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\AdvertType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="CategoryType.php.html#26"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\CategoryType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="CategoryType.php.html#59"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\CategoryType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="CategoryType.php.html#72"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\CategoryType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="EmailChangeType.php.html#48"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\EmailChangeType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="EmailChangeType.php.html#61"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\EmailChangeType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="PasswordChangeType.php.html#27"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\PasswordChangeType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="PasswordChangeType.php.html#80"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\PasswordChangeType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="PasswordChangeType.php.html#93"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\PasswordChangeType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="RegistrationType.php.html#28"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\RegistrationType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="RegistrationType.php.html#79"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\RegistrationType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="RegistrationType.php.html#92"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\RegistrationType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="TagType.php.html#26"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\TagType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="TagType.php.html#62"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\TagType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="TagType.php.html#75"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\TagType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="UserType.php.html#26"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\UserType::__construct — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="UserType.php.html#78"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\UserType::configureOptions — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+ <a href="UserType.php.html#91"><circle cx="60.0" cy="185.0" r="4.0" class="bubble-danger"><title>App\Form\Type\UserType::getBlockPrefix — Coverage: 0.0% | Lines: 1 | Complexity: 1</title></circle></a>
+</svg>
+     </div>
+    </div>
+    <div class="col-md-6 dashboard-column">
+     <h3>&nbsp;</h3>
+     <p class="text-muted small">Sorted by descending CRAP (Change Risk Anti-Patterns) index.</p>
+     <div class="scrollbox">
+<table class="table">
+ <thead>
+  <tr>
+   <th>Method</th>
+   <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+   <th class="text-right">Coverage</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr><td><a href="AdvertType.php.html#28">App\Form\Type\AdvertType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="AdvertType.php.html#43">App\Form\Type\AdvertType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="AdvertType.php.html#96">App\Form\Type\AdvertType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="AdvertType.php.html#109">App\Form\Type\AdvertType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="CategoryType.php.html#26">App\Form\Type\CategoryType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="CategoryType.php.html#41">App\Form\Type\CategoryType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="CategoryType.php.html#59">App\Form\Type\CategoryType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="CategoryType.php.html#72">App\Form\Type\CategoryType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="EmailChangeType.php.html#31">App\Form\Type\EmailChangeType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="EmailChangeType.php.html#48">App\Form\Type\EmailChangeType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="EmailChangeType.php.html#61">App\Form\Type\EmailChangeType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="PasswordChangeType.php.html#27">App\Form\Type\PasswordChangeType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="PasswordChangeType.php.html#42">App\Form\Type\PasswordChangeType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="PasswordChangeType.php.html#80">App\Form\Type\PasswordChangeType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="PasswordChangeType.php.html#93">App\Form\Type\PasswordChangeType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="RegistrationType.php.html#28">App\Form\Type\RegistrationType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="RegistrationType.php.html#43">App\Form\Type\RegistrationType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="RegistrationType.php.html#79">App\Form\Type\RegistrationType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="RegistrationType.php.html#92">App\Form\Type\RegistrationType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="TagType.php.html#26">App\Form\Type\TagType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="TagType.php.html#41">App\Form\Type\TagType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="TagType.php.html#62">App\Form\Type\TagType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="TagType.php.html#75">App\Form\Type\TagType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="UserType.php.html#26">App\Form\Type\UserType::__construct</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="UserType.php.html#41">App\Form\Type\UserType::buildForm</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="UserType.php.html#78">App\Form\Type\UserType::configureOptions</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+  <tr><td><a href="UserType.php.html#91">App\Form\Type\UserType::getBlockPrefix</a></td><td class="text-right">2</td><td class="text-right">0.0%</td></tr>
+ </tbody>
+</table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 14.1.1</a> using <a href="https://www.php.net/" target="_top">PHP 8.5.6</a> and <a href="https://phpunit.de/">PHPUnit 13.1.4</a> at Fri May 22 22:21:15 UTC 2026.</small>
+    </p>
+   </footer>
+  </div>
+ </body>
+</html>
