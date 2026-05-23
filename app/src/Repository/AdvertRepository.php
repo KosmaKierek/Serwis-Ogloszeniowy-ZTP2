@@ -81,9 +81,9 @@ class AdvertRepository extends ServiceEntityRepository
                 'partial advert.{id, createdAt, updatedAt, title}',
                 'partial category.{id, title}',
                 'partial tags.{id, title}',
-                //'partial author.{id, email}'
+                'partial author.{id, email}'
             )
-            //->join('advert.author', 'author')
+            ->join('advert.author', 'author')
             ->join('advert.category', 'category')
             ->leftJoin('advert.tags', 'tags')
             ->orderBy('advert.updatedAt', 'DESC');

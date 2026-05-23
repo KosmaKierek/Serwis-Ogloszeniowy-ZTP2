@@ -1,6 +1,6 @@
 <?php
 /**
- * Advert controller tests.
+ * Security controller tests.
  */
 
 namespace App\Tests\Controller;
@@ -29,14 +29,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 /**
- * Class AdvertControllerTest.
+ * Class SecurityControllerTest.
  */
-class AdvertControllerTest extends WebTestCase
+class SecurityControllerTest extends WebTestCase
 {
     /**
      * Test route.
      */
-    public const TEST_ROUTE = '/advert';
+    public const TEST_ROUTE = '/login';
 
     /**
      * Test client.
@@ -52,12 +52,12 @@ class AdvertControllerTest extends WebTestCase
     }
 
     /**
-     * Test '/advert' index
+     * Test '/login' index
      */
     public function testIndexRoute(): void
     {
         // given
-        $expectedStatusCode = 302;
+        $expectedStatusCode = 200;
 
         // when
         $this->httpClient->request('GET', self::TEST_ROUTE);
