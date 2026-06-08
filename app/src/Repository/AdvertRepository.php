@@ -81,11 +81,11 @@ class AdvertRepository extends ServiceEntityRepository
                 'partial advert.{id, createdAt, updatedAt, title}',
                 'partial category.{id, title}',
                 'partial tags.{id, title}',
-                'partial author.{id, email}'
+                'author'
             )
-            ->join('advert.author', 'author')
             ->join('advert.category', 'category')
             ->leftJoin('advert.tags', 'tags')
+            ->join('advert.author', 'author')
             ->orderBy('advert.updatedAt', 'DESC');
 
         return $this->applyFiltersToList($queryBuilder, $filters);

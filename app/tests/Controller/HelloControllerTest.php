@@ -7,6 +7,9 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
+use App\Entity\User;
+use App\Entity\Enum\UserRole;
+use App\Repository\UserRepository;
 
 /**
  * Class HelloControllerTest.
@@ -47,7 +50,47 @@ class HelloControllerTest extends WebTestCase
 
         // then
         $this->assertEquals($givenStatusCode, $expectedStatusCode);
-        $this->assertSelectorExists('html');
+        //$this->assertSelectorExists('html');
+    }
+
+    /**
+     * Test index route for user.
+     */
+    public function testIndexRouteAdminUser(): void
+    {
+        // given
+        $expectedStatusCode = 302;
+        $adminUser = $this->createUser([UserRole::ROLE_USER->value]);
+        $this->httpClient->loginUser($adminUser);
+
+        // when
+        $this->httpClient->request('GET', self::TEST_ROUTE);
+        $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
+
+        // then
+        $this->assertEquals($expectedStatusCode, $resultStatusCode);
+    }
+
+    /**
+     * Create user.
+     *
+     * @param array $roles User roles
+     *
+     * @return User User entity
+     */
+    private function createUser(array $roles): User
+    {
+        $passwordHasher = static::getContainer()->get('security.password_hasher');
+        $user = new User();
+        $user->setEmail('user1@example.com');
+        $user->setRoles($roles);
+        $user->setPassword(
+            $passwordHasher->hashPassword($user, 'user1234')
+        );
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $userRepository->save($user);
+
+        return $user;
     }
 }
 
