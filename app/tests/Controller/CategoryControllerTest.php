@@ -6,11 +6,8 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Advert;
-use App\Entity\Category;
 use App\Entity\Enum\UserRole;
 use App\Entity\User;
-use App\Repository\CategoryRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

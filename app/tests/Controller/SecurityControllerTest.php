@@ -5,28 +5,8 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Enum\UserRole;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
-use App\Dto\AdvertListInputFiltersDto;
-use App\Entity\Advert;
-use App\Resolver\AdvertListInputFiltersDtoResolver;
-use App\Entity\User;
-use App\Form\Type\AdvertType;
-use App\Service\AdvertService;
-use App\Service\CategoryServiceInterface;
-use Doctrine\ORM\Exception\ORMException;
-use Doctrine\ORM\OptimisticLockException;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
-use Symfony\Component\HttpKernel\Attribute\MapQueryString;
-use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 /**
  * Class SecurityControllerTest.
