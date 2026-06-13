@@ -37,7 +37,7 @@ class HelloControllerTest extends WebTestCase
     }
 
     /**
-     * Test '/' index
+     * Test '/' index.
      */
     public function testIndexRoute(): void
     {
@@ -93,4 +93,3 @@ class HelloControllerTest extends WebTestCase
         return $user;
     }
 }
-

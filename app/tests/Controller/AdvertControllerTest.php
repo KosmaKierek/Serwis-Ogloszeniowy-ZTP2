@@ -311,4 +311,3 @@ class AdvertControllerTest extends WebTestCase
         return $user;
     }
 }
-

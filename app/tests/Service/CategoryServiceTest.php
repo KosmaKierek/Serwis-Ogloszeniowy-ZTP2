@@ -10,10 +10,6 @@ use App\Service\CategoryService;
 use App\Service\CategoryServiceInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -33,9 +29,6 @@ class CategoryServiceTest extends KernelTestCase
 
     /**
      * Set up test.
-     *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function setUp(): void
     {
@@ -46,8 +39,6 @@ class CategoryServiceTest extends KernelTestCase
 
     /**
      * Test save.
-     *
-     * @throws ORMException
      */
     public function testSave(): void
     {
@@ -73,8 +64,6 @@ class CategoryServiceTest extends KernelTestCase
 
     /**
      * Test delete.
-     *
-     * @throws OptimisticLockException|ORMException
      */
     public function testDelete(): void
     {
@@ -102,8 +91,6 @@ class CategoryServiceTest extends KernelTestCase
 
     /**
      * Test find by id.
-     *
-     * @throws ORMException
      */
     public function testFindById(): void
     {
@@ -147,4 +134,3 @@ class CategoryServiceTest extends KernelTestCase
         $this->assertEquals($expectedResultSize, $result->count());
     }
 }
-

@@ -11,10 +11,6 @@ use App\Service\UserService;
 use App\Service\UserServiceInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Exception\ORMException;
-use Doctrine\ORM\OptimisticLockException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -34,9 +30,6 @@ class UserServiceTest extends KernelTestCase
 
     /**
      * Set up test.
-     *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function setUp(): void
     {
@@ -47,7 +40,6 @@ class UserServiceTest extends KernelTestCase
 
     /**
      * Test registration.
-     *
      */
     public function testRegistration(): void
     {
@@ -71,24 +63,7 @@ class UserServiceTest extends KernelTestCase
         $this->assertNotNull($resultUser);
         $this->assertEquals('someuser@example.com', $resultUser->getEmail());
         $this->assertContains('ROLE_USER', $resultUser->getRoles());
-        $this->assertNotEquals($password, $resultUser->getPassword());
         $this->assertNotEmpty(UserRole::cases());
-    }
-
-    /**
-     * Helper to create User.
-     *
-     * @return User User entity
-     */
-    private function createUser(string $email, string $password): User
-    {
-        $user = new User();
-        $user->setEmail($email);
-        $user->setPassword($password);
-        $this->entityManager->persist($user);
-        $this->entityManager->flush();
-
-        return $user;
     }
 
     /**

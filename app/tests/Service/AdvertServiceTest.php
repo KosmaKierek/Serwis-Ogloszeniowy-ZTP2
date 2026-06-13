@@ -5,7 +5,6 @@
 
 namespace App\Tests\Service;
 
-use App\Dto\AdvertListInputFiltersDto;
 use App\Entity\Advert;
 use App\Entity\Category;
 use App\Entity\Tag;
@@ -13,12 +12,7 @@ use App\Entity\User;
 use App\Service\AdvertService;
 use App\Service\AdvertServiceInterface;
 use App\Service\TagServiceInterface;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
@@ -39,8 +33,6 @@ class AdvertServiceTest extends KernelTestCase
     /**
      * Set up test.
      *
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
     public function setUp(): void
     {
@@ -280,8 +272,6 @@ class AdvertServiceTest extends KernelTestCase
         $page = 1;
         $dataSetSize = 3;
 
-        $filters = new AdvertListInputFiltersDto(null, null, );
-
         $counter = 0;
         while ($counter < $dataSetSize) {
             $advert = new Advert();
@@ -295,7 +285,7 @@ class AdvertServiceTest extends KernelTestCase
         }
 
         // when
-        $result = $this->advertService->getPaginatedList($page, $user, $filters);
+        $result = $this->advertService->getPaginatedList($page, $user);
 
         // then
         $this->assertEquals($dataSetSize, $result->count());
@@ -332,5 +322,3 @@ class AdvertServiceTest extends KernelTestCase
         return $user;
     }
 }
-
-

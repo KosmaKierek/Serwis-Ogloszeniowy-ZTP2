@@ -122,5 +122,3 @@ class UserControllerTest extends WebTestCase
         return $user;
     }
 }
-
-
