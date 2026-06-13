@@ -1,30 +1,30 @@
 <?php
 
 /**
- * Category Controller test.
+ * Tag Controller test.
  */
 
 namespace App\Tests\Controller;
 
-use App\Entity\Category;
+use App\Entity\Tag;
 use App\Entity\Enum\UserRole;
 use App\Entity\User;
-use App\Repository\CategoryRepository;
+use App\Repository\TagRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class CategoryControllerTest.
+ * Class TagControllerTest.
  */
-class CategoryControllerTest extends WebTestCase
+class TagControllerTest extends WebTestCase
 {
     /**
      * Test route.
      *
      * @var string
      */
-    public const TEST_ROUTE = '/category';
+    public const TEST_ROUTE = '/tag';
 
     /**
      * Test client.
@@ -58,9 +58,9 @@ class CategoryControllerTest extends WebTestCase
     }
 
     /**
-     * Test create category.
+     * Test create tag.
      */
-    public function testCreateCategory(): void
+    public function testCreateTag(): void
     {
         // given
         $adminUser = $this->createUser([
@@ -68,13 +68,13 @@ class CategoryControllerTest extends WebTestCase
             UserRole::ROLE_ADMIN->value
         ]);
         $this->httpClient->loginUser($adminUser);
-        $categoryTitle = 'category';
+        $tagTitle = 'tag';
 
         // when
         $crawler = $this->httpClient->request('GET', self::TEST_ROUTE.'/create');
         $form = $crawler->filter('button[type="submit"], input[type="submit"]')->first()->form([
-            'category' => [
-                'title' => $categoryTitle,
+            'tag' => [
+                'title' => $tagTitle,
             ],
         ]);
         $this->httpClient->submit($form);
@@ -85,15 +85,15 @@ class CategoryControllerTest extends WebTestCase
 
         $this->assertSelectorExists('.alert-success');
 
-        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
-        $createdCategory = $categoryRepository->findOneBy(['title' => $categoryTitle]);
-        $this->assertNotNull($createdCategory);
+        $tagRepository = static::getContainer()->get(TagRepository::class);
+        $createdTag = $tagRepository->findOneBy(['title' => $tagTitle]);
+        $this->assertNotNull($createdTag);
     }
 
     /**
-     * Test edit category.
+     * Test delete tag.
      */
-    public function testEditCategory(): void
+    public function testDeleteTag(): void
     {
         // given
         $adminUser = $this->createUser([
@@ -104,67 +104,17 @@ class CategoryControllerTest extends WebTestCase
 
         $entityManager = static::getContainer()->get('doctrine.orm.entity_manager');
 
-        $category = new Category();
-        $category->setTitle('original category');
-        $entityManager->persist($category);
+        $tag = new Tag();
+        $tag->setTitle('tag to delete');
+        $entityManager->persist($tag);
         $entityManager->flush();
 
-        $categoryId = $category->getId();
+        $tagId = $tag->getId();
 
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $categoryId . '/edit'
-        );
-
-        $form = $crawler
-            ->filter('button[type="submit"], input[type="submit"]')
-            ->first()
-            ->form([
-                'category[title]' => 'updated category',
-            ]);
-
-        $this->httpClient->submit($form);
-
-        // then
-        $this->assertResponseRedirects(self::TEST_ROUTE);
-        $this->httpClient->followRedirect();
-
-        $this->assertSelectorExists('.alert-success');
-
-        $entityManager->clear();
-
-        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
-        $updatedCategory = $categoryRepository->find($categoryId);
-        $this->assertNotNull($updatedCategory);
-        $this->assertSame('updated category', $updatedCategory->getTitle());
-    }
-
-    /**
-     * Test delete category.
-     */
-    public function testDeleteCategory(): void
-    {
-        // given
-        $adminUser = $this->createUser([
-            UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
-        ]);
-        $this->httpClient->loginUser($adminUser);
-
-        $entityManager = static::getContainer()->get('doctrine.orm.entity_manager');
-
-        $category = new Category();
-        $category->setTitle('category to delete');
-        $entityManager->persist($category);
-        $entityManager->flush();
-
-        $categoryId = $category->getId();
-
-        // when
-        $crawler = $this->httpClient->request(
-            'GET',
-            self::TEST_ROUTE . '/' . $categoryId . '/delete'
+            self::TEST_ROUTE . '/' . $tagId . '/delete'
         );
 
         $this->assertResponseIsSuccessful();
@@ -183,9 +133,9 @@ class CategoryControllerTest extends WebTestCase
 
         $entityManager->clear();
 
-        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
-        $deletedCategory = $categoryRepository->find($categoryId);
-        $this->assertNull($deletedCategory);
+        $tagRepository = static::getContainer()->get(TagRepository::class);
+        $deletedTag = $tagRepository->find($tagId);
+        $this->assertNull($deletedTag);
     }
 
     /**

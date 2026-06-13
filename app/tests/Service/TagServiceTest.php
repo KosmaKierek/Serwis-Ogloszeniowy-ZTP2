@@ -122,7 +122,7 @@ class TagServiceTest extends KernelTestCase
     }
 
     /**
-     * Test pagination empty list.
+     * Test pagination list.
      */
     public function testGetPaginatedList(): void
     {
@@ -146,8 +146,6 @@ class TagServiceTest extends KernelTestCase
         // then
         $this->assertEquals($expectedResultSize, $result->count());
     }
-
-    // other tests for paginated list
 }
 
 
