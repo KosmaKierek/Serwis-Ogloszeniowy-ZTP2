@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Security controller tests.
  */
@@ -44,7 +45,7 @@ class SecurityControllerTest extends WebTestCase
 
         // when
         $this->httpClient->request('GET', self::TEST_ROUTE);
-        $givenStatusCode=$this->httpClient->getResponse()->getStatusCode();
+        $givenStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
         $this->assertEquals($givenStatusCode, $expectedStatusCode);

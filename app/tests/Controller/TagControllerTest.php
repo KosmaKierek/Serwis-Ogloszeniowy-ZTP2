@@ -65,7 +65,7 @@ class TagControllerTest extends WebTestCase
         // given
         $adminUser = $this->createUser([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($adminUser);
         $tagTitle = 'tag';
@@ -98,7 +98,7 @@ class TagControllerTest extends WebTestCase
         // given
         $adminUser = $this->createUser([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($adminUser);
 
@@ -114,7 +114,7 @@ class TagControllerTest extends WebTestCase
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $tagId . '/delete'
+            self::TEST_ROUTE.'/'.$tagId.'/delete'
         );
 
         $this->assertResponseIsSuccessful();

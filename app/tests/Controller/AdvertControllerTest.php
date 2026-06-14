@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert controller tests.
  */
@@ -51,7 +52,7 @@ class AdvertControllerTest extends WebTestCase
 
         // when
         $this->httpClient->request('GET', self::TEST_ROUTE);
-        $givenStatusCode=$this->httpClient->getResponse()->getStatusCode();
+        $givenStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
         $this->assertEquals($givenStatusCode, $expectedStatusCode);
@@ -194,7 +195,7 @@ class AdvertControllerTest extends WebTestCase
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $advertId . '/edit'
+            self::TEST_ROUTE.'/'.$advertId.'/edit'
         );
 
         $form = $crawler->filter('form')->form([
@@ -264,7 +265,7 @@ class AdvertControllerTest extends WebTestCase
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $advertId . '/delete'
+            self::TEST_ROUTE.'/'.$advertId.'/delete'
         );
 
         $this->assertResponseIsSuccessful();

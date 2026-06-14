@@ -65,7 +65,7 @@ class CategoryControllerTest extends WebTestCase
         // given
         $adminUser = $this->createUser([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($adminUser);
         $categoryTitle = 'category';
@@ -98,7 +98,7 @@ class CategoryControllerTest extends WebTestCase
         // given
         $adminUser = $this->createUser([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($adminUser);
 
@@ -114,7 +114,7 @@ class CategoryControllerTest extends WebTestCase
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $categoryId . '/edit'
+            self::TEST_ROUTE.'/'.$categoryId.'/edit'
         );
 
         $form = $crawler
@@ -148,7 +148,7 @@ class CategoryControllerTest extends WebTestCase
         // given
         $adminUser = $this->createUser([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($adminUser);
 
@@ -164,7 +164,7 @@ class CategoryControllerTest extends WebTestCase
         // when
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $categoryId . '/delete'
+            self::TEST_ROUTE.'/'.$categoryId.'/delete'
         );
 
         $this->assertResponseIsSuccessful();

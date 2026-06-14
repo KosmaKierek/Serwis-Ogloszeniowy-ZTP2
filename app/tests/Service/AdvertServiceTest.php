@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Advert service tests.
  */
@@ -32,7 +33,6 @@ class AdvertServiceTest extends KernelTestCase
 
     /**
      * Set up test.
-     *
      */
     public function setUp(): void
     {
@@ -299,7 +299,7 @@ class AdvertServiceTest extends KernelTestCase
     private function createCategory(): Category
     {
         $category = new Category();
-        $category->setTitle("category");
+        $category->setTitle('category');
         $this->entityManager->persist($category);
         $this->entityManager->flush();
 
@@ -314,8 +314,8 @@ class AdvertServiceTest extends KernelTestCase
     private function createUser(): User
     {
         $user = new User();
-        $user->setEmail("some_user@example.com");
-        $user->setPassword("some_password");
+        $user->setEmail('some_user@example.com');
+        $user->setPassword('some_password');
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 

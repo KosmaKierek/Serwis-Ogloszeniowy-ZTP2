@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User controller tests.
  */
@@ -42,7 +43,7 @@ class UserControllerTest extends WebTestCase
         // given
         $admin = $this->createAdmin([
             UserRole::ROLE_USER->value,
-            UserRole::ROLE_ADMIN->value
+            UserRole::ROLE_ADMIN->value,
         ]);
         $this->httpClient->loginUser($admin);
 
@@ -51,7 +52,7 @@ class UserControllerTest extends WebTestCase
 
         $crawler = $this->httpClient->request(
             'GET',
-            self::TEST_ROUTE . '/' . $userId . '/delete'
+            self::TEST_ROUTE.'/'.$userId.'/delete'
         );
 
         $this->assertResponseIsSuccessful();

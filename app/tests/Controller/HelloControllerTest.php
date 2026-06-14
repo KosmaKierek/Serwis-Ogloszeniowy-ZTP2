@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Hello controller tests.
  */
@@ -46,11 +47,10 @@ class HelloControllerTest extends WebTestCase
 
         // when
         $this->httpClient->request('GET', self::TEST_ROUTE);
-        $givenStatusCode=$this->httpClient->getResponse()->getStatusCode();
+        $givenStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
         $this->assertEquals($givenStatusCode, $expectedStatusCode);
-        //$this->assertSelectorExists('html');
     }
 
     /**
